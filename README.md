@@ -1,29 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h2, h3 {
-            color: #2c3e50;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        p {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-
 <h2>O que é o RabbitMQ?</h2>
 
 <p>O <strong>RabbitMQ</strong> é uma ferramenta de mensageria baseada no protocolo AMQP (Advanced Message Queuing Protocol). Ele permite que aplicações se comuniquem através do envio e recebimento de mensagens, garantindo que as mensagens sejam entregues de forma confiável entre diferentes sistemas, mesmo que eles não estejam diretamente conectados ou funcionando ao mesmo tempo.</p>
@@ -134,58 +108,6 @@
         </ul>
     </li>
 </ol>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
-        }
-        h2, h3, h4 {
-            color: #2c3e50;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        table th, table td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        table th {
-            background-color: #34495e;
-            color: white;
-        }
-        code {
-            background-color: #e8e8e8;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.95em;
-        }
-        pre {
-            background-color: #34495e;
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-    </style>
-</head>
-<body>
-
 <h2>Explicação do Código</h2>
 
 <p>O projeto é composto por quatro arquivos principais em Java que se comunicam com o RabbitMQ. A seguir, é apresentado um resumo das funcionalidades de cada arquivo, seguido por uma explicação detalhada dos códigos e exemplos característicos.</p>
