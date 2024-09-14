@@ -38,49 +38,54 @@ Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode c
 
 ![image](https://github.com/user-attachments/assets/59d09fff-fb9c-4a10-b333-c21d88ca5f94)
 
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Formatação</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            background-color: #f9f9f9;
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            margin: 20px; 
+            background-color: #f9f9f9; 
         }
-        h2, h3, h4 {
-            color: #2c3e50;
+        h2, h3, h4 { 
+            color: #2c3e50; 
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
         }
-        table th, table td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
+        table th, table td { 
+            padding: 12px; 
+            border: 1px solid #ddd; 
+            text-align: left; 
         }
-        table th {
-            background-color: #34495e;
-            color: white;
+        table th { 
+            background-color: #34495e; 
+            color: white; 
         }
-        code {
-            background-color: #e8e8e8;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.95em;
+        code { 
+            background-color: #e8e8e8; 
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-size: 0.95em; 
         }
-        pre {
-            background-color: #34495e;
-            color: white;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
+        pre { 
+            background-color: #34495e; 
+            color: white; 
+            padding: 10px; 
+            border-radius: 4px; 
+            overflow-x: auto; 
         }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        ul { 
+            list-style-type: disc; 
+            margin-left: 20px; 
         }
     </style>
 
