@@ -38,11 +38,7 @@ Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode c
 
 ![image](https://github.com/user-attachments/assets/59d09fff-fb9c-4a10-b333-c21d88ca5f94)
 
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explicação do Código - RabbitMQ Java</title>
     <style>
         body {
