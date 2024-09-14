@@ -88,8 +88,6 @@ Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode c
             margin-left: 20px;
         }
     </style>
-</head>
-<body>
 
 <h2>Explicação do Código</h2>
 
