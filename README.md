@@ -28,6 +28,21 @@ Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode c
 
 ![image](https://github.com/user-attachments/assets/bcd1b0c1-ecb8-4b8e-8a39-381f51c0ccfd)
 
+![image](https://github.com/user-attachments/assets/94cf7dfc-9156-4f19-b12a-9ae88d425d90)
+
+![image](https://github.com/user-attachments/assets/2cb65f4f-efbd-4433-9eb0-68d557337ee0)
+
+![image](https://github.com/user-attachments/assets/cdd0f205-6155-4a26-8333-5907f2a6979d)
+
+![image](https://github.com/user-attachments/assets/4e3b7fa5-ecdd-4a74-9c6e-c32ab4910d63)
+
+![image](https://github.com/user-attachments/assets/59d09fff-fb9c-4a10-b333-c21d88ca5f94)
+
+
+
+
+
+
 
 
 
