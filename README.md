@@ -1,3 +1,61 @@
+<h1 style="color: #007bff; text-align: center;">Instalação do Docker Desktop e RabbitMQ</h1>
+
+<h2 style="color: #0056b3;">Instalação do Docker Desktop</h2>
+<p>Para instalar o Docker Desktop no Windows, siga os passos abaixo:</p>
+<ol>
+    <li><strong>Acesse o site oficial do Docker Desktop:</strong>
+        <a href="https://docs.docker.com/desktop/install/windows-install/">Link para instalação do Docker Desktop</a>.
+    </li>
+    <li><strong>Baixe o instalador:</strong> Escolha a versão compatível com o seu sistema operacional e inicie o download.</li>
+    <li><strong>Execute o instalador:</strong> Clique duas vezes no arquivo baixado para iniciar o processo de instalação. Siga as instruções do assistente de instalação.</li>
+    <li><strong>Conclua a instalação:</strong> Após finalizar a instalação, o Docker Desktop será iniciado automaticamente. Verifique se o Docker está rodando corretamente abrindo o <em>Prompt de Comando</em> e digitando <code>docker --version</code> para confirmar se a instalação foi bem-sucedida.</li>
+</ol>
+
+<h2 style="color: #0056b3;">Instalação do RabbitMQ no Windows</h2>
+<p>Para instalar o RabbitMQ no Windows 11, siga os passos:</p>
+<ol>
+    <li><strong>Baixar o instalador do RabbitMQ:</strong> Acesse o site oficial do RabbitMQ:
+        <a href="https://www.rabbitmq.com/">www.rabbitmq.com</a>. Baixe o instalador compatível com a arquitetura do seu sistema (32 bits ou 64 bits).
+    </li>
+    <li><strong>Executar o instalador:</strong> Após o download, clique duas vezes no instalador para abrir o assistente de instalação.</li>
+    <li><strong>Instalar RabbitMQ:</strong> Siga as instruções do assistente, escolhendo o diretório de instalação e outras configurações. Instale também o <strong>Erlang</strong>, que é um requisito para o funcionamento do RabbitMQ.</li>
+    <li><strong>Iniciar o serviço RabbitMQ:</strong> Abra o <em>Gerenciador de Serviços do Windows</em> (procure por "Serviços" no menu Iniciar). Localize o serviço "RabbitMQ" na lista, clique com o botão direito nele e selecione "Iniciar".</li>
+    <li><strong>Acessar a interface de gerenciamento:</strong> Abra o navegador e acesse:
+        <a href="http://localhost:15672/">http://localhost:15672/</a>. Isso abrirá a Interface de Gerenciamento do RabbitMQ.
+    </li>
+    <li><strong>Fazer login:</strong> Use as credenciais padrão para login:
+        <ul>
+            <li><strong>Usuário:</strong> <code>guest</code></li>
+            <li><strong>Senha:</strong> <code>guest</code></li>
+        </ul>
+        Por questões de segurança, é altamente recomendado alterar a senha padrão.
+    </li>
+    <li><strong>Configurar filas e exchanges:</strong> Através da Interface de Gerenciamento, você pode criar filas, exchanges e outras configurações necessárias para a comunicação entre sistemas.</li>
+</ol>
+
+<h2 style="color: #0056b3;">Criar uma Imagem Docker para RabbitMQ</h2>
+<p>Agora que o Docker está instalado, podemos criar uma imagem Docker do RabbitMQ com as seguintes etapas:</p>
+<ol>
+    <li><strong>Acessar o Docker Hub:</strong> Visite o <a href="https://hub.docker.com/">Docker Hub</a> e pesquise pela imagem do RabbitMQ no campo de busca.</li>
+    <li><strong>Selecionar a versão correta:</strong> Ao encontrar a imagem oficial do RabbitMQ, selecione a versão mais recente com suporte a <strong>management</strong> (interface de gerenciamento via navegador). Normalmente, a versão é identificada como <code>rabbitmq:&lt;versão&gt;-management</code>, por exemplo, <code>rabbitmq:3.13.7-management</code>.</li>
+    <li><strong>Baixar a imagem do RabbitMQ:</strong> Abra o <em>Prompt de Comando</em> e execute o seguinte comando (substituindo pela versão mais recente encontrada no Docker Hub):</li>
+</ol>
+<pre><code>docker pull rabbitmq:3.13.7-management</code></pre>
+<ol start="4">
+    <li><strong>Executar o RabbitMQ em um contêiner Docker:</strong> Após o download da imagem, você pode executar o RabbitMQ em um contêiner com o comando:</li>
+</ol>
+<pre><code>docker run -d --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13.7-management</code></pre>
+<ol start="5">
+    <li><strong>Acessar o RabbitMQ no Docker:</strong> Acesse a interface de gerenciamento do RabbitMQ pelo navegador, indo até:
+        <a href="http://localhost:15672/">http://localhost:15672/</a>. Use as mesmas credenciais padrão para fazer o login:
+        <ul>
+            <li><strong>Usuário:</strong> <code>guest</code></li>
+            <li><strong>Senha:</strong> <code>guest</code></li>
+        </ul>
+    </li>
+</ol>
+
+
 Instalar o RabbitMQ:
 
 Baixar o instalador do RabbitMQ: Acesse o site oficial do RabbitMQ (www.rabbitmq.com) e baixe o instalador para Windows compatível com a arquitetura do seu sistema (32 bits ou 64 bits).
