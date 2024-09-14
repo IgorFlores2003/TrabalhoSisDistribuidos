@@ -13,3 +13,8 @@ Acessar a interface de gerenciamento do RabbitMQ: Abra o seu navegador e vá par
 Fazer login: Faça login na Interface de Gerenciamento do RabbitMQ usando as credenciais padrão (usuário: "guest" e senha: "guest"). É essencial alterar a senha padrão por motivos de segurança.
 
 Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode criar filas, exchanges e associações para facilitar a comunicação entre aplicativos.
+
+
+
+![image](https://github.com/user-attachments/assets/0325209d-e09a-4189-807b-8099a7490cb9)
+
