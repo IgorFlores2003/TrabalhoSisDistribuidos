@@ -1,4 +1,4 @@
-Neste tutorial, você aprenderá como instalar o RabbitMQ no Windows 11 e começar a usá-lo para filas de mensagens e comunicação entre aplicativos.
+Instalar o RabbitMQ:
 
 Baixar o instalador do RabbitMQ: Acesse o site oficial do RabbitMQ (www.rabbitmq.com) e baixe o instalador para Windows compatível com a arquitetura do seu sistema (32 bits ou 64 bits).
 
@@ -15,7 +15,8 @@ Fazer login: Faça login na Interface de Gerenciamento do RabbitMQ usando as cre
 Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode criar filas, exchanges e associações para facilitar a comunicação entre aplicativos.
 
 
-
+Para instalar o Docker Desktop acesse o site: https://docs.docker.com/desktop/install/windows-install/
+e siga as seguintes instruções:
 ![image](https://github.com/user-attachments/assets/e05a927b-10ae-4463-a937-c0740023b64e)
 
 ![image](https://github.com/user-attachments/assets/2cd0a659-cd6d-4475-8964-86fbb899a029)
@@ -28,13 +29,23 @@ Criar filas e exchanges: Na Interface de Gerenciamento do RabbitMQ, você pode c
 
 ![image](https://github.com/user-attachments/assets/bcd1b0c1-ecb8-4b8e-8a39-381f51c0ccfd)
 
+Após e instalação do Docker acesse ao site: https://hub.docker.com/
+onde você irá pesquisar pela imagem docker rabbitMQ:
+
 ![image](https://github.com/user-attachments/assets/94cf7dfc-9156-4f19-b12a-9ae88d425d90)
 
+Acesse a imagem:
+
 ![image](https://github.com/user-attachments/assets/2cb65f4f-efbd-4433-9eb0-68d557337ee0)
+
+Copie onde está informado a <versão>-management mais atual do rabbitMQ
 
 ![image](https://github.com/user-attachments/assets/cdd0f205-6155-4a26-8333-5907f2a6979d)
 
 ![image](https://github.com/user-attachments/assets/4e3b7fa5-ecdd-4a74-9c6e-c32ab4910d63)
+
+Após acessar o Prompt de comando insira este comando seguindo a versão vista no site da imagem anterior:
+docker pull rabbitmq:3.13.7-management
 
 ![image](https://github.com/user-attachments/assets/59d09fff-fb9c-4a10-b333-c21d88ca5f94)
 
