@@ -108,59 +108,61 @@ docker pull rabbitmq:3.13.7-management
 ![image](https://github.com/user-attachments/assets/59d09fff-fb9c-4a10-b333-c21d88ca5f94)
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Formatação</title>
+   
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            line-height: 1.6; 
-            margin: 20px; 
-            background-color: #f9f9f9; 
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
         }
-        h2, h3, h4 { 
-            color: #2c3e50; 
+        h2, h3, h4 {
+            color: #2c3e50;
         }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 25px 0; 
-            background-color: #fff; 
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        table th, table td { 
-            padding: 12px; 
-            border: 1px solid #ddd; 
-            text-align: left; 
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
         }
-        table th { 
-            background-color: #34495e; 
-            color: white; 
+        table th {
+            background-color: #34495e;
+            color: white;
         }
-        code { 
-            background-color: #e8e8e8; 
-            padding: 2px 6px; 
-            border-radius: 4px; 
-            font-size: 0.95em; 
+        code {
+            background-color: #e8e8e8;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.95em;
         }
-        pre { 
-            background-color: #34495e; 
-            color: white; 
-            padding: 10px; 
-            border-radius: 4px; 
-            overflow-x: auto; 
+        pre {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
         }
-        ul { 
-            list-style-type: disc; 
-            margin-left: 20px; 
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
         }
     </style>
+</head>
+<body>
 
 <h2>Explicação do Código</h2>
 
-<p>O projeto consiste em quatro componentes Java principais que interagem com o RabbitMQ para enviar e receber mensagens. A tabela abaixo resume a função de cada componente, seguida de detalhes sobre os trechos de código mais relevantes.</p>
+<p>O projeto é composto por quatro arquivos principais em Java que se comunicam com o RabbitMQ. A seguir, é apresentado um resumo das funcionalidades de cada arquivo, seguido por uma explicação detalhada dos códigos e exemplos característicos.</p>
 
 <table>
   <thead>
@@ -180,11 +182,11 @@ docker pull rabbitmq:3.13.7-management
     </tr>
     <tr>
       <td><code>ProducerFailureTest.java</code></td>
-      <td>Testa a resiliência do sistema simulando falhas de conexão.</td>
+      <td>Simula falhas de conexão e tenta realizar reconexões automáticas.</td>
     </tr>
     <tr>
       <td><code>ProducerLoadTest.java</code></td>
-      <td>Testa a capacidade do sistema sob carga enviando 10.000 mensagens para a fila <code>load_test_queue</code>.</td>
+      <td>Testa a capacidade do sistema enviando 10.000 mensagens para a fila <code>load_test_queue</code>.</td>
     </tr>
   </tbody>
 </table>
@@ -192,73 +194,93 @@ docker pull rabbitmq:3.13.7-management
 <h3>Detalhes dos Componentes</h3>
 
 <h4><code>Producer.java</code></h4>
+<p>O <code>Producer.java</code> é responsável por enviar mensagens para a fila RabbitMQ. Aqui está o que ele faz:</p>
 <ul>
-  <li><strong>Conexão com RabbitMQ:</strong> Configura e estabelece conexão usando <code>ConnectionFactory</code>.</li>
-  <li><strong>Declaração da Fila:</strong> Assegura que a fila <code>hello_queue</code> exista.</li>
-  <li><strong>Envio de Mensagem:</strong> Publica uma mensagem simples na fila.</li>
+  <li><strong>Conexão com RabbitMQ:</strong> Usa a classe <code>ConnectionFactory</code> para estabelecer uma conexão com o servidor RabbitMQ.</li>
+  <li><strong>Declaração da Fila:</strong> O produtor garante que a fila chamada <code>hello_queue</code> exista usando o método <code>queueDeclare</code>. Se a fila ainda não existir, ela será criada.</li>
+  <li><strong>Envio de Mensagem:</strong> A mensagem "New Test!" é enviada à fila com o método <code>basicPublish</code>.</li>
 </ul>
 
-<h4><code>Consumer.java</code></h4>
-<ul>
-  <li><strong>Conexão com RabbitMQ:</strong> Semelhante ao produtor para garantir consistência na conexão.</li>
-  <li><strong>Declaração da Fila:</strong> Confirma a existência da fila <code>hello_queue</code>.</li>
-  <li><strong>Recebimento de Mensagem:</strong> Utiliza <code>DeliverCallback</code> para processar mensagens recebidas.</li>
-</ul>
-
-<h4><code>ProducerFailureTest.java</code></h4>
-<ul>
-  <li><strong>Simulação de Falha:</strong> Intencionalmente usa credenciais erradas para falhar na autenticação.</li>
-  <li><strong>Tratamento de Falha:</strong> Captura exceções e tenta reconectar, registrando o sucesso ou falha do processo.</li>
-</ul>
-
-<h4><code>ProducerLoadTest.java</code></h4>
-<ul>
-  <li><strong>Teste de Carga:</strong> Envia uma grande quantidade de mensagens, verificando a performance e robustez do sistema.</li>
-</ul>
-
-<h3>Código Relevante</h3>
-
-<h4>Conexão e Configuração Básica</h4>
 <pre><code>
+// Código relevante: Conexão e envio de mensagem
 ConnectionFactory factory = new ConnectionFactory();
 factory.setHost("localhost");
+factory.setPort(5672);  // Porta padrão do RabbitMQ
 factory.setUsername("guest");
 factory.setPassword("guest");
-Connection connection = factory.newConnection();
-Channel channel = connection.createChannel();
+
+try (Connection connection = factory.newConnection();
+     Channel channel = connection.createChannel()) {
+
+    channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+    String message = "New Test!";
+    channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+    System.out.println(" [x] Sent '" + message + "'");
+}
 </code></pre>
 
-<h4>Manipulação de Fila</h4>
-<pre><code>
-channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-</code></pre>
+<h4><code>Consumer.java</code></h4>
+<p>O <code>Consumer.java</code> é responsável por consumir as mensagens da fila <code>hello_queue</code>. Ele realiza as seguintes tarefas:</p>
+<ul>
+  <li><strong>Conexão com RabbitMQ:</strong> Configura uma conexão semelhante ao <code>Producer</code>.</li>
+  <li><strong>Declaração da Fila:</strong> Assegura que o consumidor esteja conectado à mesma fila <code>hello_queue</code>.</li>
+  <li><strong>Recebimento de Mensagem:</strong> Utiliza <code>DeliverCallback</code> para processar mensagens quando elas chegam.</li>
+</ul>
 
-<h4>Envio e Recebimento de Mensagem</h4>
-<p><strong>Envio</strong></p>
 <pre><code>
-channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
-</code></pre>
-
-<p><strong>Recebimento</strong></p>
-<pre><code>
+// Código relevante: Consumo de mensagens
 DeliverCallback deliverCallback = (consumerTag, delivery) -> {
     String message = new String(delivery.getBody(), "UTF-8");
     System.out.println(" [x] Recebeu: '" + message + "'");
 };
-channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {});
+
+channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
 </code></pre>
 
-<h4>Tratamento de Falhas</h4>
+<h4><code>ProducerFailureTest.java</code></h4>
+<p>O <code>ProducerFailureTest.java</code> simula falhas de conexão ao RabbitMQ. A senha configurada incorretamente é usada para disparar erros, e o sistema tenta reconectar automaticamente.</p>
+<ul>
+  <li><strong>Simulação de Falha:</strong> O código usa credenciais incorretas para forçar um erro de autenticação.</li>
+  <li><strong>Tentativa de Reconexão:</strong> Quando uma falha ocorre, o código tenta reconectar três vezes.</li>
+</ul>
+
 <pre><code>
-try {
-    // tenta reconectar
-} catch (Exception e) {
-    // log de erro e tentativas de reconexão
+// Código relevante: Tentativa de reconexão
+for (int i = 1; i <= 3; i++) {
+    try {
+        connection = factory.newConnection();
+        channel = connection.createChannel();
+        channel.queueDeclare(QUEUE_NAME, true, false, false, null);
+        channel.basicPublish("", QUEUE_NAME, null, "Reconexão bem-sucedida!".getBytes());
+        System.out.println(" [x] Reconexão bem-sucedida e mensagem enviada!");
+        break;
+    } catch (Exception retryException) {
+        System.err.println(" [!] Falha na reconexão: " + retryException.getMessage());
+        if (i == 3) {
+            System.err.println(" [!] Não foi possível reconectar após 3 tentativas.");
+        }
+    }
+}
+</code></pre>
+
+<h4><code>ProducerLoadTest.java</code></h4>
+<p>O <code>ProducerLoadTest.java</code> é utilizado para realizar testes de carga, enviando 10.000 mensagens para a fila <code>load_test_queue</code>. Ele é útil para avaliar o desempenho do sistema sob alta demanda.</p>
+<ul>
+  <li><strong>Teste de Carga:</strong> Um laço <code>for</code> é utilizado para enviar 10.000 mensagens em sequência.</li>
+</ul>
+
+<pre><code>
+// Código relevante: Teste de carga
+for (int i = 0; i < 10000; i++) {
+    String message = "Mensagem de carga número " + i;
+    channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+    System.out.println(" [x] Enviou: '" + message + "'");
 }
 </code></pre>
 
 </body>
 </html>
+
 
 
 
