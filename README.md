@@ -226,6 +226,8 @@ for (int i = 0; i < 10000; i++) {
 }
 </code></pre>
 
+<h3>Tabela de resultados</h3>
+
 </body>
 </html>
 
