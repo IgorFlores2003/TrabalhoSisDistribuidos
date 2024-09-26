@@ -226,8 +226,37 @@ for (int i = 0; i < 10000; i++) {
 }
 </code></pre>
 
-<h3>Tabela de resultados</h3>
-
+<h3>Tabela de resultados - Teste de Carga</h3>
+<table border="1">
+        <thead>
+            <tr>
+                <th>Quantidade de mensagens</th>
+                <th>Tempo gasto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>10 mil</td>
+                <td>2 segundos</td>
+            </tr>
+            <tr>
+                <td>100 mil</td>
+                <td>9 segundos</td>
+            </tr>
+            <tr>
+                <td>500 mil</td>
+                <td>46 segundos</td>
+            </tr>
+            <tr>
+                <td>1 milhões</td>
+                <td>1 minuto</td>
+            </tr>
+            <tr>
+                <td>5 milhões</td>
+                <td>5 minutos</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
 
